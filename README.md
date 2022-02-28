@@ -1,8 +1,8 @@
 # Reverse an Array
-the chellenge is to take a list and to return its reverse .
+this chellange is about to take a list input and return its revers.
 
 ## Whiteboard Process
-<!-- Embedded whiteboard image -->
+![whiteboard](./array-reverse.PNG)
 
 ## Approach & Efficiency
-<!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->
+I took the insert method approach , and the bigO time and space = O(n).

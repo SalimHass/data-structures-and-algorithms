@@ -29,6 +29,8 @@ class LinkedList:
 
     def __str__(self):
         string = ""
+        if self.head is None:
+            return "The list is empty"
         current = self.head
         while current is not None:
             string = string + f"{{{current.value}}}->"

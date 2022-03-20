@@ -1,3 +1,6 @@
+from warnings import catch_warnings
+
+
 class Node:
     def __init__(self, value, node=None):
         self.value = value

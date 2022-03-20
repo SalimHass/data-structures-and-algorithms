@@ -1,3 +1,6 @@
+from warnings import catch_warnings
+
+
 class Node:
     def __init__(self, value, node=None):
         self.value = value
@@ -12,9 +15,8 @@ class LinkedList:
         new_node = Node(value)
         if self.head:
             current = self.head
-            while current.next_node:
-                current = current.next_node
-            current.next_node = new_node
+            new_node.next_node=current
+            self.head = new_node
         else:
             self.head = new_node
 
@@ -31,7 +33,7 @@ class LinkedList:
         string = ""
         current = self.head
         while current is not None:
-            string = string + f"{{{current.value}}} ->"
+            string = string + f"{{{current.value}}}->"
             current = current.next_node
         string = string + "NULL"
         return string
@@ -75,19 +77,7 @@ class LinkedList:
                 current = current.next_node
         return False
 
-    def delete(self, value):
-        if self.head:
-            if self.head.value == value:
-                self.head = self.head.next_node
-                return True
-            else:
-                current = self.head
-                while current.next_node:
-                    if current.next_node.value == value:
-                        current.next_node = current.next_node.next_node
-                        return True
-                    current = current.next_node
-        return False
+
     def kth_from_end(self, k):
             list_length = 0
             current = self.head

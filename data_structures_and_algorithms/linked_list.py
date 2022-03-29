@@ -1,3 +1,4 @@
+from audioop import lin2adpcm
 from warnings import catch_warnings
 
 
@@ -96,6 +97,28 @@ class LinkedList:
                 raise IndexError
 
 
+def zip_lists(link_list_a, link_list_b):
+    link_list = LinkedList()
+    if link_list_a is not None and link_list_b is None:
+        link_list.head = link_list_a.head
+        return link_list
+
+    if link_list_b is not None and link_list_a is None:
+        link_list.head = link_list_b.head
+        return link_list
+    current_a = link_list_a.head
+    current_b = link_list_b.head
+    while current_a or current_b:
+        if current_a:
+            link_list.append(current_a.value)
+            current_a = current_a.next_node
+        if current_b:
+            link_list.append(current_b.value)
+            current_b = current_b.next_node
+
+    return link_list
+
+
 if __name__ == '__main__':
     list = LinkedList()
     print(list)
@@ -112,3 +135,22 @@ if __name__ == '__main__':
     list.insert_before(9, 8)
     print(list)
     print(list.kth_from_end(3).value)
+    lista = LinkedList()
+    lista.append(1)
+    lista.append(3)
+    lista.append(6)
+    lista.append(8)
+    lista.append(11)
+    print(lista)
+    listb = LinkedList()
+    listb.append(5)
+    listb.append(9)
+    listb.append(10)
+    print(listb)
+    print(zip_lists(lista, listb))
+  
+
+    
+    
+  
+

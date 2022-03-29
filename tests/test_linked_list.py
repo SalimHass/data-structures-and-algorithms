@@ -1,5 +1,5 @@
 import pytest
-from data_structures_and_algorithms.linked_list import Node,LinkedList
+from data_structures_and_algorithms.linked_list import Node,LinkedList, zip_lists
 
 
 def test_is_empty_linked_list():
@@ -38,6 +38,15 @@ def test_kth_element(linked_list4):
     actual= linked_list4.kth_from_end(2).value
     assert expected == actual
 
+def test_zip_lists(linked_list5,linked_list6):
+    expected = f"{{5}}->{{7}}->{{3}}->{{4}}->{{1}}->{{2}}->{{10}}->{{13}}->NULL"
+    actual=zip_lists(linked_list5,linked_list6).__str__()
+    assert expected == actual
+
+def test_zip_lists_empty(linked_list5,linked_list7):
+    expected = f"{{5}}->{{3}}->{{1}}->{{10}}->{{13}}->NULL"
+    actual=zip_lists(linked_list5,linked_list7).__str__()
+    assert expected == actual
 
 @pytest.fixture
 def linked_list():
@@ -73,3 +82,25 @@ def linked_list4():
     linked_list4.append(13)
     linked_list4.insert_after(5,17)
     return linked_list4
+
+@pytest.fixture
+def linked_list5():
+    linked_list5=LinkedList()
+    linked_list5.append(5)
+    linked_list5.append(3)
+    linked_list5.append(1)
+    linked_list5.append(10)
+    linked_list5.append(13)
+    return linked_list5
+
+@pytest.fixture
+def linked_list6():
+    linked_list6=LinkedList()
+    linked_list6.append(7)
+    linked_list6.append(4)
+    linked_list6.append(2)
+    return linked_list6 
+
+@pytest.fixture
+def linked_list7():
+    linked_list7=LinkedList()

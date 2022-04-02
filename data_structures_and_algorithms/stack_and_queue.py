@@ -98,9 +98,9 @@ if __name__=="__main__":
   queue.enqueue(17)
   queue.enqueue(7)
   queue.dequeue()
+  queue.peek()
 
   sq=PseudoQueue()
-  sq.dequeue()
   sq.enqueue(11)
   sq.enqueue(13)
   sq.enqueue(17)

@@ -66,6 +66,31 @@ class Queue :
     else: 
         return False
 
+
+class PseudoQueue:
+    def __init__(self):
+        self.stack_in = Stack()
+        self.stack_out = Stack()
+
+    def enqueue(self, value):
+        self.stack_in.push(value)
+        return self.stack_in
+
+    def dequeue(self):
+        if self.stack_out.is_empty() is False:
+            return self.stack_out.pop()
+        if self.stack_in.is_empty():
+            raise ValueError
+        else:
+            while self.stack_in.is_empty() is False:
+                self.stack_out.push(self.stack_in.pop())
+        return self.stack_out.pop()
+
+    
+
+
+
+
 if __name__=="__main__":
   queue=Queue()
   queue.enqueue(13)
@@ -73,3 +98,14 @@ if __name__=="__main__":
   queue.enqueue(17)
   queue.enqueue(7)
   queue.dequeue()
+
+  sq=PseudoQueue()
+  sq.dequeue()
+  sq.enqueue(11)
+  sq.enqueue(13)
+  sq.enqueue(17)
+  print(sq.dequeue())
+  print(sq.dequeue())
+
+  print(sq.dequeue())
+

@@ -1,6 +1,6 @@
-from data_structures_and_algorithms.stack_and_queue import Stack,Node,Queue
+from data_structures_and_algorithms.stack_and_queue import Stack,Node,Queue,PseudoQueue
 import pytest
-
+import unittest
 
 
 
@@ -55,6 +55,16 @@ def test_peek(test_queue2):
   actual = test_queue2.peek()
   expected=13
   assert actual == expected
+
+def test_pseudo_queue():
+  pq=PseudoQueue()
+  pq.enqueue(13)
+  pq.enqueue(27)
+  pq.enqueue(23)
+  actual=pq.dequeue()
+  expected=13
+  assert actual == expected
+
  
 @pytest.fixture
 def stack():
@@ -80,3 +90,6 @@ def test_queue2():
   queue.enqueue(17)
   queue.enqueue(7)
   return queue
+
+
+

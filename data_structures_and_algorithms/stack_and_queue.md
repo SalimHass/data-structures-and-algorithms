@@ -10,10 +10,16 @@ in these challenges we will work on stack and queues :
 6. dequeue: deletes a value from the front of queue, and returns the value of that node.
 7. peel: returns the value of the front of the queue.
 8. is empty: Returns: Boolean indicating whether or not the queue is empty.
+### Pseudo Queue
+9. add class PseudoQueue , which utilize two Stack instances
+10. enqueue:add new node to the top of the pseudo queue.
+11. dequeue: deletes a value from the top of queue and returns its values in the from of first in first out.
 
 ## Whiteboard Process
 ![whiteboard](../data_structures_and_algorithms/assessts/stack.jpg)
 ![whiteboard](../data_structures_and_algorithms/assessts/Queue.jpg)
+![whiteboard](../data_structures_and_algorithms/assessts/PQ.jpg)
+
 
 ## Approach & Efficiency
 we used the stack and queue data structure methods, Node,stack and queue as classes and added functions to handle every requirment

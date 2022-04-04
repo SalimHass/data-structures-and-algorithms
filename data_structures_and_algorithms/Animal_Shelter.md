@@ -4,7 +4,7 @@
 we need to check animals in an animal shelter class. the animals should be either dog or cat . the shelter works on the manner of First in First out .
 
 ## Whiteboard Process
-![whiteboard](data_structures_and_algorithms/assessts/animal_shelter.jpg)
+![whiteboard](../data_structures_and_algorithms/assessts/animal_shelter.jpg)
 
 ## Approach & Efficiency
 we utilized the queue class we used before . we set dog class , and cat class. we added animal to cat_queue or dog_queue depending on its type . 

@@ -15,4 +15,5 @@
 
 
 ## Approach & Efficiency
-we used tree node that contains value and left and right pointers, then we created a tree , the traversing methods used as required by definition .
+
+we used tree node that contains value and left and right pointers, then we created a tree , the traversing methods used as required by definition 

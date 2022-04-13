@@ -42,6 +42,11 @@ def test_max2(tree2):
     expected = 77
     assert actual == expected 
 
+def test_breadth_first(tree):
+    actual = tree.breadth_first()
+    expected = [1, 2, 3, 6, 7, 5,4]
+    assert actual == expected 
+
 
 @pytest.fixture
 def tree():

@@ -1,6 +1,3 @@
-from curses import nonl
-from logging import root
-
 
 class TNode:
     def __init__(self, value):
@@ -118,7 +115,7 @@ if __name__== "__main__":
     tree = BinaryTree()
     tree.root = node1
     #tree.in_order()
-    #print(tree.post_order())
+    print(tree.post_order())
     bin= BinarySearchTree()
     bin.add(10)
     bin.add(7)

@@ -35,9 +35,6 @@ def test_b_tree_true(b_tree):
 
 
 
-
-
-
 @pytest.fixture
 def tree():
  

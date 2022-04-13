@@ -1,15 +1,18 @@
 # Binary Tree and BST Implementation 
-we need to create a function to find the max value in a tree:
-1. assign a max var , set it equal to the value of the root
-2. traverse the tree each time check if the value of the node is greater than the max
-3. if the value is greater than the max , set the max to the new value
-4. return the max
+
+1. create a class Node that stores a value and a left child node and right child node
+2. create binary tree class, it should contain the methods for the depth first traversal: pre order, in order and post order, post order should return an array
+3. create binary search tree class, it should be a subclass lf the binary tree class, and should contain these methods, 
+
+        i- add:takes a value as an argument , and adds the value as new node in three where is should be.
+
+        ii- contains: takes a value as an argument, return a boolean whether the value is in the list or not. 
 
 
 ## Whiteboard Process
-![whiteboard](../data_structures_and_algorithms/assessts/find_max.jpg)
+![whiteboard](../data_structures_and_algorithms/assessts/Tree.jpg)
 
 
 
 ## Approach & Efficiency
-we created the function, we assigned a max var = root.value , then we traversed through the tree compearing every node.value with the max, if the value>max, set max to the new value .
+we used tree node that contains value and left and right pointers, then we created a tree , the traversing methods used as required by definition .

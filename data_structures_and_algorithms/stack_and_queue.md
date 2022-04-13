@@ -14,15 +14,12 @@ in these challenges we will work on stack and queues :
 9. add class PseudoQueue , which utilize two Stack instances
 10. enqueue:add new node to the top of the pseudo queue.
 11. dequeue: deletes a value from the top of queue and returns its values in the from of first in first out.
-### Animal Shelter
-12. enqueue:add new animal to its corresponding queue.
-13. dequeue: removes animal from its corresponding queue.
 
 ## Whiteboard Process
 ![whiteboard](../data_structures_and_algorithms/assessts/stack.jpg)
 ![whiteboard](../data_structures_and_algorithms/assessts/Queue.jpg)
 ![whiteboard](../data_structures_and_algorithms/assessts/PQ.jpg)
-![whiteboard](../data_structures_and_algorithms/assessts/animal_shelter.jpg)
+
 
 
 ## Approach & Efficiency

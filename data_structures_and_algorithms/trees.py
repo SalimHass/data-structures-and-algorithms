@@ -63,19 +63,20 @@ class BinaryTree:
         return arr
     
 
-    def find_max(self):
-        max= self.root.value
-        def _walk(node):
-            nonlocal max
-            if node.value > max:
-                max=node.value
-            if node.left:
-                _walk(node.left)
-            if node.right:
-                _walk(node.right)
 
-        _walk(self.root)
-        return max
+def find_max(root):
+    max= root.value
+    def _walk(node):
+        nonlocal max
+        if node.value > max:
+            max=node.value
+        if node.left:
+            _walk(node.left)
+        if node.right:
+            _walk(node.right)
+
+    _walk(root)
+    return max
 
 
 
@@ -134,15 +135,15 @@ if __name__== "__main__":
     tree = BinaryTree()
     tree.root = node1
     #tree.pre_order()
-    print(tree.find_max())
+    print(find_max(node1))
     #tree.in_order()
     #print(tree.post_order())
-    bin= BinarySearchTree()
+"""    bin= BinarySearchTree()
     bin.add(10)
     bin.add(7)
     bin.add(3)
     bin.add(5)
-    bin.add(13)
+    bin.add(13)"""
     #print(bin.post_order())
 
     #print(bin.contains(6))

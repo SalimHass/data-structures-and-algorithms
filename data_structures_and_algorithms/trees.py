@@ -1,4 +1,4 @@
-
+from data_structures_and_algorithms.stack_and_queue import Queue
 class TNode:
     def __init__(self, value):
         self.value = value
@@ -65,6 +65,45 @@ class BinaryTree:
                 
         _walk(self.root)
         return arr
+    
+
+
+def find_max(root):
+    max= root.value
+    def _walk(node):
+        nonlocal max
+        if node.value > max:
+            max=node.value
+        if node.left:
+            _walk(node.left)
+        if node.right:
+            _walk(node.right)
+
+    _walk(root)
+    return max
+
+    def breadth_first(self):
+        q=Queue()
+        arr=[]
+        q.enqueue(self.root)
+        
+       
+        while q.front:
+            arr.append(q.front.value.value)
+            
+            if q.front.value.left is not None:
+                q.enqueue(q.front.value.left)
+            if q.front.value.right is not None:
+                q.enqueue(q.front.value.right)
+    
+            q.dequeue()
+        return arr
+        
+
+       
+        
+ 
+
         
 class BinarySearchTree(BinaryTree):
 
@@ -105,9 +144,9 @@ if __name__== "__main__":
     node1 = TNode(1)
     node2 = TNode(2)
     node3 = TNode(3)
-    node4 = TNode(4)
+    node4 = TNode(26)
     node5=TNode(5)
-    node6=TNode(6)
+    node6=TNode(50)
     node7=TNode(7)
     node1.left = node2
     node1.right = node3
@@ -118,16 +157,22 @@ if __name__== "__main__":
 
     tree = BinaryTree()
     tree.root = node1
+    #tree.pre_order()
+
+    print(find_max(node1))
+
     #tree.in_order()
-    print(tree.post_order())
-    bin= BinarySearchTree()
+    #print(tree.post_order())
+"""    bin= BinarySearchTree()
     bin.add(10)
     bin.add(7)
     bin.add(3)
     bin.add(5)
-    bin.add(13)
-    print(bin.post_order())
+    bin.add(13)"""
+    #print(bin.post_order())
 
-    print(bin.contains(6))
+    #print(bin.contains(6))
+
+    print(tree.breadth_first())
     
 

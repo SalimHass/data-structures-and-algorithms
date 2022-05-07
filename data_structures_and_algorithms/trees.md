@@ -15,6 +15,7 @@
 
 
 ## Approach & Efficiency
+
 we used the recursion as inner function to traverse each tree and track its values. And inside that recursive function, we got the value we want and appended it to a list.
 
 Big-O for the methods:
@@ -77,3 +78,4 @@ contains
     input: value
     doing: check if the value is in the tree at least once
     output: boolean 
+

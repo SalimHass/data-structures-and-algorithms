@@ -16,8 +16,9 @@ class BinaryTree:
     doing: traverse a tree pre_order
     output: print values of the nodes of the tree
     """
+        arr=[]
         def _walk(node):
-            print(node.value)
+            arr.append(node.value)
 
             if node.left:
                 _walk(node.left)
@@ -25,6 +26,7 @@ class BinaryTree:
                 _walk(node.right)
 
         _walk(self.root)
+        return arr
     
     def in_order(self):
         """
@@ -32,15 +34,17 @@ class BinaryTree:
     doing: traverse a tree in_order
     output: print values of the nodes of the tree
     """
+        arr=[]
         def _walk(node):
             
             if node.left:
                 _walk(node.left)
-            print(node.value)
+            arr.append(node.value)
             if node.right:
                 _walk(node.right)
 
         _walk(self.root)
+        return arr
 
     def post_order(self):
         """

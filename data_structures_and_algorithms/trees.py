@@ -1,3 +1,7 @@
+from locale import currency
+from pickle import FALSE
+from platform import node
+import queue
 from data_structures_and_algorithms.stack_and_queue import Queue
 class TNode:
     def __init__(self, value):
@@ -135,13 +139,106 @@ class BinarySearchTree(BinaryTree):
         
     
         
+class KNode:
+    def __init__(self, value):
+        """this takes a value as arg , and will create a node with possible children"""
+        self.value = value
+        self.children=[]
+
+class KTree:
+    def __init__(self):
+        self.root=None
     
+    def breadth(self):
+        if self.root is None:
+            return "Empty Tree"
+        current = self.root
+        elements = []
+        q = Queue()
+        q.enqueue(current)
+        while q.front is not None :
+            current=q.dequeue()
+            elements.append(current.value)
+            for child in current.children:
+                q.enqueue(child)
+        print(elements)    
+        return elements
+
+    def adding_child(self, value, parent):
+        new_node=KNode(value)
+        parent.children.append(new_node)
+        return new_node
+
+    
+
+def fizz_buzz_tree(k_tree):
+    new_tree=KTree()
+    if k_tree.root is None:
+        raise Exception('tree is empty')
+
+    def _walk(current , parent = None):
+        if current.value % 3 == 0 and current.value % 5 == 0:
+            new_value = 'FizzBuzz'
+
+        elif current.value % 3 == 0:
+            new_value = 'Fizz'
+        elif current.value % 5 == 0:
+            new_value = 'Buzz'
+        else:
+            new_value = current.value
+
+        node= KNode(new_value)
+        if parent is not None :
+            parent.children.append(node)
+        if current.children:
+            for child in current.children:
+                _walk(child,node)
+
+        if parent is None:
+            return node
+        
+    new_tree.root=_walk(k_tree.root)
+
+    return new_tree
+            
+
+
+
+
+
+
+
+
+
         
 
 
 if __name__== "__main__":
+
+    node1=KNode(13)
+    node2=KNode(15)
+    node3=KNode(17)
+    node4=KNode(21)
+    node5=KNode(25)
+    node6=KNode(24)
+    node7=KNode(30)
+    node1.children=[node5,node7]
+    node5.children=[node4]
+    node7.children=[node2, node3]
+    node3.children=[node6]
+    ktree=KTree()
+    ktree.root=node1
+    ktree.breadth()
+    fizz_buzz_tree(ktree).breadth()
     
-    node1 = TNode(1)
+    
+    
+
+
+
+
+    
+""" node1 = TNode(1)
     node2 = TNode(2)
     node3 = TNode(3)
     node4 = TNode(26)
@@ -173,6 +270,6 @@ if __name__== "__main__":
 
     #print(bin.contains(6))
 
-    print(tree.breadth_first())
+    print(tree.breadth_first())"""
     
 

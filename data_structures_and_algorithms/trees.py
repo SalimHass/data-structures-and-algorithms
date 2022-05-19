@@ -77,22 +77,7 @@ class BinaryTree:
         _walk(self.root)
         return max
 
-    def breadth_first(self):
-        q=Queue()
-        arr=[]
-        q.enqueue(self.root)
-        
-       
-        while q.front:
-            arr.append(q.front.value.value)
-            
-            if q.front.value.left is not None:
-                q.enqueue(q.front.value.left)
-            if q.front.value.right is not None:
-                q.enqueue(q.front.value.right)
     
-            q.dequeue()
-        return arr
         
 
        
@@ -126,6 +111,27 @@ class BinarySearchTree(BinaryTree):
 
     def contains(self, value):
         return value in self.post_order()
+
+
+
+def breadth_first(node):
+        q=Queue()
+        arr=[]
+        q.enqueue(node)
+        if node is None:
+            raise Exception('tree is empty')
+        
+       
+        while q.front:
+            arr.append(q.front.value.value)
+            
+            if q.front.value.left is not None:
+                q.enqueue(q.front.value.left)
+            if q.front.value.right is not None:
+                q.enqueue(q.front.value.right)
+    
+            q.dequeue()
+        return arr
 
         
     
@@ -166,6 +172,6 @@ if __name__== "__main__":
 
     #print(bin.contains(6))
 
-    print(tree.breadth_first())
+    print(breadth_first(node1))
     
 

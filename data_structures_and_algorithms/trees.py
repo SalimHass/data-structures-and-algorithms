@@ -230,14 +230,7 @@ if __name__== "__main__":
     ktree.root=node1
     ktree.breadth()
     fizz_buzz_tree(ktree).breadth()
-    
-    
-    
 
-
-
-
-    
 """ node1 = TNode(1)
     node2 = TNode(2)
     node3 = TNode(3)
@@ -251,7 +244,6 @@ if __name__== "__main__":
     node3.left=node5
     node2.left=node6
     node2.right=node7
-
     tree = BinaryTree()
     tree.root = node1
     #tree.pre_order()
@@ -267,9 +259,13 @@ if __name__== "__main__":
     bin.add(5)
     bin.add(13)"""
     #print(bin.post_order())
-
     #print(bin.contains(6))
 
     print(tree.breadth_first())"""
     
+    
+
+
+
+
 

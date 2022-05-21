@@ -1,3 +1,7 @@
+from locale import currency
+from pickle import FALSE
+from platform import node
+import queue
 from data_structures_and_algorithms.stack_and_queue import Queue
 class TNode:
     def __init__(self, value):
@@ -16,8 +20,9 @@ class BinaryTree:
     doing: traverse a tree pre_order
     output: print values of the nodes of the tree
     """
+        arr=[]
         def _walk(node):
-            print(node.value)
+            arr.append(node.value)
 
             if node.left:
                 _walk(node.left)
@@ -25,6 +30,7 @@ class BinaryTree:
                 _walk(node.right)
 
         _walk(self.root)
+        return arr
     
     def in_order(self):
         """
@@ -32,15 +38,17 @@ class BinaryTree:
     doing: traverse a tree in_order
     output: print values of the nodes of the tree
     """
+        arr=[]
         def _walk(node):
             
             if node.left:
                 _walk(node.left)
-            print(node.value)
+            arr.append(node.value)
             if node.right:
                 _walk(node.right)
 
         _walk(self.root)
+        return arr
 
     def post_order(self):
         """
@@ -63,21 +71,37 @@ class BinaryTree:
         return arr
     
 
-    def find_max(self):
-        max= self.root.value
-        def _walk(node):
-            nonlocal max
-            if node.value > max:
-                max=node.value
-            if node.left:
-                _walk(node.left)
-            if node.right:
-                _walk(node.right)
 
-        _walk(self.root)
-        return max
+def find_max(root):
+    max= root.value
+    def _walk(node):
+        nonlocal max
+        if node.value > max:
+            max=node.value
+        if node.left:
+            _walk(node.left)
+        if node.right:
+            _walk(node.right)
 
+    _walk(root)
+    return max
+
+    def breadth_first(self):
+        q=Queue()
+        arr=[]
+        q.enqueue(self.root)
+        
+       
+        while q.front:
+            arr.append(q.front.value.value)
+            
+            if q.front.value.left is not None:
+                q.enqueue(q.front.value.left)
+            if q.front.value.right is not None:
+                q.enqueue(q.front.value.right)
     
+            q.dequeue()
+        return arr
         
 
        
@@ -112,37 +136,103 @@ class BinarySearchTree(BinaryTree):
     def contains(self, value):
         return value in self.post_order()
 
-
-
-def breadth_first(node):
-        q=Queue()
-        arr=[]
-        q.enqueue(node)
-        if node is None:
-            raise Exception('tree is empty')
         
-       
-        while q.front:
-            arr.append(q.front.value.value)
+    
+        
+class KNode:
+    def __init__(self, value):
+        """this takes a value as arg , and will create a node with possible children"""
+        self.value = value
+        self.children=[]
+
+class KTree:
+    def __init__(self):
+        self.root=None
+    
+    def breadth(self):
+        if self.root is None:
+            return "Empty Tree"
+        current = self.root
+        elements = []
+        q = Queue()
+        q.enqueue(current)
+        while q.front is not None :
+            current=q.dequeue()
+            elements.append(current.value)
+            for child in current.children:
+                q.enqueue(child)
+        print(elements)    
+        return elements
+
+    def adding_child(self, value, parent):
+        new_node=KNode(value)
+        parent.children.append(new_node)
+        return new_node
+
+    
+
+def fizz_buzz_tree(k_tree):
+    new_tree=KTree()
+    if k_tree.root is None:
+        raise Exception('tree is empty')
+
+    def _walk(current , parent = None):
+        if current.value % 3 == 0 and current.value % 5 == 0:
+            new_value = 'FizzBuzz'
+
+        elif current.value % 3 == 0:
+            new_value = 'Fizz'
+        elif current.value % 5 == 0:
+            new_value = 'Buzz'
+        else:
+            new_value = current.value
+
+        node= KNode(new_value)
+        if parent is not None :
+            parent.children.append(node)
+        if current.children:
+            for child in current.children:
+                _walk(child,node)
+
+        if parent is None:
+            return node
+        
+    new_tree.root=_walk(k_tree.root)
+
+    return new_tree
             
-            if q.front.value.left is not None:
-                q.enqueue(q.front.value.left)
-            if q.front.value.right is not None:
-                q.enqueue(q.front.value.right)
-    
-            q.dequeue()
-        return arr
 
-        
-    
-        
-    
+
+
+
+
+
+
+
+
         
 
 
 if __name__== "__main__":
-    
-    node1 = TNode(1)
+
+    node1=KNode(13)
+    node2=KNode(15)
+    node3=KNode(17)
+    node4=KNode(21)
+    node5=KNode(25)
+    node6=KNode(24)
+    node7=KNode(30)
+    node1.children=[node5,node7]
+    node5.children=[node4]
+    node7.children=[node2, node3]
+    node3.children=[node6]
+    ktree=KTree()
+    ktree.root=node1
+    ktree.breadth()
+    fizz_buzz_tree(ktree).breadth()
+
+
+""" node1 = TNode(1)
     node2 = TNode(2)
     node3 = TNode(3)
     node4 = TNode(26)
@@ -155,23 +245,25 @@ if __name__== "__main__":
     node3.left=node5
     node2.left=node6
     node2.right=node7
-
     tree = BinaryTree()
     tree.root = node1
     #tree.pre_order()
-    #print(tree.find_max())
+    print(find_max(node1))
     #tree.in_order()
     #print(tree.post_order())
-    bin= BinarySearchTree()
+"""    bin= BinarySearchTree()
     bin.add(10)
     bin.add(7)
     bin.add(3)
     bin.add(5)
-    bin.add(13)
+    bin.add(13)"""
     #print(bin.post_order())
-
     #print(bin.contains(6))
-
-    print(breadth_first(node1))
+    print(tree.breadth_first())"""
     
+    
+    
+
+
+
 

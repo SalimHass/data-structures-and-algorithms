@@ -15,4 +15,67 @@
 
 
 ## Approach & Efficiency
-we used tree node that contains value and left and right pointers, then we created a tree , the traversing methods used as required by definition .
+
+we used the recursion as inner function to traverse each tree and track its values. And inside that recursive function, we got the value we want and appended it to a list.
+
+Big-O for the methods:
+
+- pre_order 
+    - BigO for time = n 
+    - BigO for space = n  
+
+- in_order
+    - BigO for time = n 
+    - BigO for space = n   
+
+- post_order
+    - BigO for time = n 
+    - BigO for space = n 
+    
+- add
+    - BigO for time = n  
+    - BigO for space = 1 
+
+- contains
+    - BigO for time = n 
+    - BigO for space= 1
+
+
+
+## API
+
+### BinaryTree class
+
+pre_order
+
+    Input: None
+    doing: traverse a tree (pre-order --> root-left-right)
+    output: print values of the nodes of the tree
+
+in_order
+
+    Input: None
+    doing: traverse a tree (in-order --> left-root-right)
+    output: print values of the nodes of the tree
+
+
+post_order
+
+    Input: None
+    doing: traverse a tree (post-order --> left-right-root)
+    output: print values of the nodes of the tree
+
+### BinaryTreeSearch class
+
+add
+
+    input: value
+    doing: add the value correctly to the tree
+    output: None
+
+contains
+   
+    input: value
+    doing: check if the value is in the tree at least once
+    output: boolean 
+

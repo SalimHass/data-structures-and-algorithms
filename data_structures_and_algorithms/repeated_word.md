@@ -31,4 +31,6 @@ def repeated_word(text):
 ```
 
 ## pull request
-[pull request](https://github.com/SalimHass/data-structures-and-algorithms/pull/25)
+[pull request1](https://github.com/SalimHass/data-structures-and-algorithms/pull/25)
+[pull request2](https://github.com/SalimHass/data-structures-and-algorithms/pull/26)
+

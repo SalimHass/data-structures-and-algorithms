@@ -86,23 +86,23 @@ def find_max(root):
     _walk(root)
     return max
 
-    def breadth_first(self):
-        q=Queue()
-        arr=[]
-        q.enqueue(self.root)
-        
-       
-        while q.front:
-            arr.append(q.front.value.value)
-            
-            if q.front.value.left is not None:
-                q.enqueue(q.front.value.left)
-            if q.front.value.right is not None:
-                q.enqueue(q.front.value.right)
+def breadth_first(root):
+    q=Queue()
+    arr=[]
+    q.enqueue(root)
     
-            q.dequeue()
-        return arr
+    
+    while q.front:
+        arr.append(q.front.value.value)
         
+        if q.front.value.left is not None:
+            q.enqueue(q.front.value.left)
+        if q.front.value.right is not None:
+            q.enqueue(q.front.value.right)
+
+        q.dequeue()
+    return arr
+    
 
        
         
@@ -252,12 +252,12 @@ if __name__== "__main__":
 
     #tree.in_order()
     #print(tree.post_order())
-"""    bin= BinarySearchTree()
+    bin= BinarySearchTree()
     bin.add(10)
     bin.add(7)
     bin.add(3)
     bin.add(5)
-    bin.add(13)"""
+    bin.add(13)
     #print(bin.post_order())
     #print(bin.contains(6))
 

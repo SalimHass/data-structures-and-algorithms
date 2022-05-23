@@ -76,6 +76,7 @@ if __name__=="__main__":
     h.set('uljia', 'hass')
     h.set('salim', 'anwar')
     print(h.keys())
+    print(h.hash('julia'))
     #print(h.map)
     #print(h.get('julia'))
     #print(h.get('salim'))

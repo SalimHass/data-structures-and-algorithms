@@ -58,9 +58,29 @@ def test_get4(hashtable):
         hashtable.get("tom")
 
 
+def test_set1(hashtable):
+    hashtable.set('martin', 'steve')
+    actual=hashtable.contains('martin')
+    expected = True
+    assert actual == expected
 
 
+def test_set2(hashtable):
+    hashtable.set('martin', 'steve')
+    actual=hashtable.get('martin')
+    expected = 'steve'
+    assert actual == expected
 
+def test_hash(hashtable):
+    actual=hashtable.hash('salim')
+    expected = 886
+    assert actual == expected
+
+
+def test_hash2(hashtable):
+    actual=hashtable.hash('julia')
+    expected = 869
+    assert actual == expected
 
 
 

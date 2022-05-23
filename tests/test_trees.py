@@ -1,5 +1,5 @@
 import pytest
-from data_structures_and_algorithms.trees import TNode,BinaryTree,BinarySearchTree, breadth_first
+from data_structures_and_algorithms.trees import TNode,BinaryTree,BinarySearchTree, breadth_first, find_max
 
 def test_tree_post_order(tree):
   actual = tree.post_order()
@@ -33,12 +33,12 @@ def test_b_tree_true(b_tree):
 
 
 def test_max(tree):
-    actual = tree.find_max()
+    actual = find_max(tree.root)
     expected = 7
     assert actual == expected 
 
 def test_max2(tree2):
-    actual = tree2.find_max()
+    actual = find_max(tree2.root)
     expected = 77
     assert actual == expected 
 

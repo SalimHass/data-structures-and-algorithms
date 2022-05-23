@@ -25,5 +25,17 @@ we created several fucniton to server the purpose of this challenge , each fucnt
 time: n
 space:1
 
+## API
+2. hash: this fucntion takes key as argument , it gets the ascii numer for each letter of the key, and then add them togother, the sum of the ascii number then multiplyed by a prime number, then we use the mode of the result and the size to assign it as an index of the main list we call map.
+
+3. set:this takes key and value , this fucntion will use the hash function to get the index of the list that this key value pair should be assigned , then it should assign them to that index, if the index is already filled, then it will appened this to the list of items inside the index
+
+4. get: this method will take the key as an argument and use the hash function to get the index in the main list. in the index it will check if the first element of every element inside the list is equal to the key given then it will return the second element  
+
+5. contains: this method will take the key as an argument and use the hash function to get the index in the main list. in the index it will check if the first element of every element inside the list is equal to the key given then it will return true , else will return false  
+
+
+6. keys: this will reaverse throught the main list and will check for the not None elements , and then it will append the first element of each element inside the elements in each index.
+
 ## pull request
 [pull request](https://github.com/SalimHass/data-structures-and-algorithms/pull/23)

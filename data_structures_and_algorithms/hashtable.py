@@ -82,6 +82,7 @@ def repeated_word(text):
             return word
         else: 
             h.set((word.lower()).split(",")[0],0)
+    raise Exception("text doesnt have any repeated words")
 
 
 

@@ -4,3 +4,4 @@
 - [x] [FizzBuzzTree](https://github.com/SalimHass/data-structures-and-algorithms/blob/main/data_structures_and_algorithms/fizz_buzz_tree.md)
 - [x] [Hashtable](https://github.com/SalimHass/data-structures-and-algorithms/blob/main/data_structures_and_algorithms/hashtable.md)
 - [x] [Repeated Word](data_structures_and_algorithms/repeated_word.md)
+- [x] [Tree Intersection](https://github.com/SalimHass/data-structures-and-algorithms/blob/main/tree_intersection/tree_intersection.md)

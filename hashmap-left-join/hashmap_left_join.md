@@ -33,5 +33,5 @@ def left_join(map1,map2):
 ```
 
 ## pull request
-[pull request](https://github.com/SalimHass/data-structures-and-algorithms/pull/27)
+[pull request]([https://github.com/SalimHass/data-structures-and-algorithms/pull/27](https://github.com/SalimHass/data-structures-and-algorithms/pull/29))
 

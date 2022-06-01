@@ -5,12 +5,12 @@ from tree_intersection import tree_intersection
 
 def test_tree_intersection(tree1,tree2):
   actual = tree_intersection(tree1,tree2)
-  expected = [1, 2, 50, 7, 3, 5, 26]
+  expected = ['50', '26', '1', '2', '3', '5', '7']
   assert actual == expected
 
 def test_tree_intersection2(tree1,tree3):
   actual = tree_intersection(tree1,tree3)
-  expected = [1, 2, 50, 7, 3]
+  expected = ['50', '1', '2', '3', '7']
   assert actual == expected
 
 def test_tree_intersection_empty(tree1,tree4):

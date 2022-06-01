@@ -1,24 +1,27 @@
 
-
+from data_structures_and_algorithms.hashtable import Hashtable
 from data_structures_and_algorithms.trees import TNode,BinaryTree
 
 
 
 def tree_intersection (tree1,tree2):
     arr=[]
+    htable=Hashtable()
     if not tree1.root or not tree2.root:
         raise Exception("one of the trees or both are empty")
     
     def _walk(node1, node2):
-        if node1.value ==node2.value:
-            arr.append(node1.value)
+        
+        if node1.value==node2.value:
+            htable.set(str(node1.value), None)
+        
         if node1.left and node2.left:
             _walk(node1.left,node2.left)
         if node1.right and node2.right:
             _walk(node1.right,node2.right)
     
     _walk(tree1.root,tree2.root)
-    return arr
+    return htable.keys()
         
 
 

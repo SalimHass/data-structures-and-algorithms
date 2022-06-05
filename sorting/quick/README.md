@@ -50,7 +50,7 @@ def swap(arr,i,low):
 
 ```
 ## Pull request
-[pull request](https://github.com/SalimHass/blogs/pull/2/)
+[pull request]([https://github.com/SalimHass/blogs/pull/2/](https://github.com/SalimHass/data-structures-and-algorithms/pull/30))
 
 ## Blog
 [blog](../quick/README.md)

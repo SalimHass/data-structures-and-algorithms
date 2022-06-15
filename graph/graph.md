@@ -4,7 +4,7 @@ in this challenge we should implenet graphs and understand the data structure an
 
 
 ## Whiteboard Process
-![whiteboard](graph/graphs.jpg)
+![whiteboard](../graph/graphs.jpg)
 
 
 
